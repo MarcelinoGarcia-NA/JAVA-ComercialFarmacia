@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_vendas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9f5ca470-0323-44cf-9065-d341d599c503">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from venda_medicamento;]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_med" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_barras" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fabricante" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="classe_med" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quant" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_med" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="10" y="10" width="59" height="50" uuid="0461fb12-24e7-4910-a28f-dccd5dc66d42"/>
+				<imageExpression><![CDATA["C:\\Users\\Garcia\\Documents\\NetBeansProjects\\Comercial_Farmacia\\src\\relatorio\\icon_farmacia_relatorio.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="79" y="18" width="439" height="42" uuid="da3cdf37-74dd-435b-b266-12c2e2102e60"/>
+				<textElement>
+					<font fontName="Arial Black" size="28"/>
+				</textElement>
+				<text><![CDATA[Relatório de Vendas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="186" y="12" width="145" height="20" uuid="66dd22e9-6e3c-4aa9-bc63-40c0d5542718"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[NOMES MEDICAMENTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="12" width="103" height="20" uuid="33695031-b2d4-4fc9-802f-2589ba0c2076"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[COD BARRAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="12" width="69" height="20" uuid="d710f06e-061c-4a2b-a4a4-7128907259a7"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[CUPOM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="12" width="103" height="20" uuid="a18dae69-d6b0-469c-8d72-ddccdaaed044"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[QUANT VENDIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="12" width="88" height="20" uuid="dc2b8334-4623-4665-b78e-e1e9e95a72d9"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[VALOR VENDA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="186" y="12" width="145" height="20" uuid="506fc2aa-d7fd-4e59-9fea-310d2971cfae"/>
+				<textFieldExpression><![CDATA[$F{nome_med}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="357" y="12" width="88" height="20" uuid="05ae0992-af6a-4517-b85a-1802af2d1995"/>
+				<textFieldExpression><![CDATA[$F{valor_med}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="12" width="69" height="20" uuid="d2955aa2-df5f-4fad-aaac-7d60f333b95d"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="12" width="106" height="20" uuid="1c306006-d7d9-46f0-b382-6c486b7b13f3"/>
+				<textFieldExpression><![CDATA[$F{quant}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="12" width="103" height="20" uuid="1196bf08-e004-404e-a159-c2a817512143"/>
+				<textFieldExpression><![CDATA[$F{cod_barras}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="525" y="10" width="40" height="20" uuid="481edf69-bb49-4e6f-84e7-0428f771e2e4"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="10" width="80" height="20" uuid="14c26344-918d-4732-82fe-e22a8ab69ed0"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
